@@ -1,0 +1,75 @@
+<ion-view title="Assistir" id="page7" cache-view="false">
+
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-chevron-left" ng-click="previous(episodio[0].video_id, episodio[0].category_id)"></button>
+    <button class="button button-icon icon ion-chevron-right" ng-click="next(episodio[0].video_id, episodio[0].category_id)"></button>
+    <button class="button button-icon icon ion-eye" ng-show="toggle" ng-click="assistir(episodio[0], episodio[0].video_id)"></button>
+    <button class="button button-icon icon ion-eye-disabled" ng-show="!toggle" ng-click="assistir(episodio[0], episodio[0].video_id)"></button>
+    <button class="button button-icon icon ion-alert" ng-click="reportar(episodio[0].video_id)"></button>
+    <button class="button button-icon icon ion-information-circled" ui-sref="animeinfo({id: episodio[0].category_id})"></button>	
+  </ion-nav-buttons>
+
+    <ion-content padding="true" class="has-header">
+
+    <p ng-if="mR4jW7xF3dA0dI7m == ''"><b>{{episodio[0].sinop}}</b></p>	
+	
+    <p ng-if="mR4jW7xF3dA0dI7m != ''">Em caso de problemas para assistir algum video, consulte a nossa <a ui-sref="faq">faq</a> ou entre em contato com nosso <a ui-sref="suporte">suporte</a>. 
+
+    <p ng-if="mR4jW7xF3dA0dI7m != ''"><b>ATENCAO: Para baixar videos voce precisa abri-los com o seu navegador dar play e pressionar o dedo sobre ele e selecionar a opcao salvar, voce tambem pode usar o Advanced Download Manager ou outros aplicativos que aparecerem na lista, inclusive player externo como o MX Player.</b></p>
+
+    <p><b>{{episodio[0].title}}</b></p>
+	<div ng-if="mR4jW7xF3dA0dI7m != ''">
+        <button class="button icon ion-play button-block button-energized" ng-click="abrir(mR4jW7xF3dA0dI7m)"> Assistir SD</button>
+
+
+        <div ng-if="kU6kJ7wC1eG5fZ2m">
+            <button class="button icon ion-play button-block button-balanced" ng-click="abrir(kU6kJ7wC1eG5fZ2m)"> Assistir HD</button>
+        </div>
+
+        <div ng-if="bF2hH1nD8sR2yQ0e">
+            <button class="button icon ion-play button-block button-positive" ng-click="abrir(bF2hH1nD8sR2yQ0e)"> Assistir FULLHD</button>
+        </div>		
+		
+        <button class="button icon ion-eye button-block button-assertive" ng-click="assistir(episodio[0], episodio[0].video_id)">{{toggle && ' Marcar como Visto' || ' Marcar como nao Visto'}}</button>           
+
+		<p><b>Player Externo/Download:</b></p>
+
+        <button class="button icon ion-android-download button-block button-calm" ng-click="opensys(mR4jW7xF3dA0dI7m)">
+            Download SD
+        </button> 
+
+        <div ng-if="kU6kJ7wC1eG5fZ2m">
+            <button class="button icon ion-android-download button-block button-royal" ng-click="opensys(kU6kJ7wC1eG5fZ2m)">
+                Download HD
+            </button> 
+        </div>
+
+        <div ng-if="bF2hH1nD8sR2yQ0e">
+            <button class="button icon ion-android-download button-block button-positive" ng-click="opensys(bF2hH1nD8sR2yQ0e)">
+                Download FULLHD
+            </button> 
+        </div>
+		
+        <button class="button icon ion-skip-forward button-block button-calm" ng-click="pexterno(mR4jW7xF3dA0dI7m)">
+            Player Externo SD
+        </button> 
+
+        <div ng-if="kU6kJ7wC1eG5fZ2m">
+            <button class="button icon ion-skip-forward button-block button-royal" ng-click="pexterno(kU6kJ7wC1eG5fZ2m)">
+                Player Externo HD
+            </button> 
+        </div>		
+
+        <div ng-if="bF2hH1nD8sR2yQ0e">
+            <button class="button icon ion-skip-forward button-block button-positive" ng-click="pexterno(bF2hH1nD8sR2yQ0e)">
+                Player Externo FULLHD
+            </button> 
+        </div>			
+	</div>
+	<div ng-if="mR4jW7xF3dA0dI7m == ''">
+        <button class="button icon ion-eye button-block button-assertive" ng-click="assistir(episodio[0], episodio[0].video_id)">{{toggle && ' Marcar como Visto' || ' Marcar como nao Visto'}}</button>           
+	</div>	
+        <br /><br /><br />
+
+    </ion-content>    
+</ion-view>
