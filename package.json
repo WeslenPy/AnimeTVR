@@ -1,0 +1,14 @@
+{
+  "name": "animetvr",
+  "version": "1.0.0",
+  "description": "api de anime (reverse engennier)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node index.js "
+  },
+  "author": "WeslenPy",
+  "license": "ISC"
+}
